@@ -1,45 +1,51 @@
-h1,h2,h3{
-    margin: 0;
-    font-family: "Roboto";
-    font-weight: 600;
-    color: #4d4d4d;
-    padding-bottom: 30px;
-    text-align: left;
+.header{
+    height: 10vh;
+    width: 100%;
+    background-image: url("/assets/img/head.jpg");
+    background-size: cover;
 }
-
-.logincard{
-    max-width: 500px;
-    display: flex;
-    margin: auto;
-    margin-top: 20px;
+.header h1{
+    height: 100%;
+    color: #f1f1f1;
     text-align: center;
-   align-items: center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
 }
-#user{
-    margin-top: 30px;
+.logincard{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+.logincard p-card{
+    width: 400px;
+    text-align: center;;
+}
+#user {
+    margin-bottom: 25px;
+    margin-top: 25px;
     text-align: left;
 }
-#senhabox{
-    margin-top: 30px;
-    text-align: left;
-}
-#botao{
-    margin-top: 10px;
-}
-.p-inputtext {
+#user input{
     width: 100%;
 }
-
-.p-accordiontab{
-    width: 800px;
+#senhabox{
+    text-align: left;
+    margin-bottom: 20px;
 }
-@media screen and (min-width:320px){
-    .logincard{
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        justify-content: space-around;
-    }
-    
+#senhabox input{
+    width: 100%;
+}
+.cadcard{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-top: 20px;
+}
+.cadcard p-accordion{
+    width: 400px;
+    text-align: center;
+    align-items: center;
 }

@@ -1,21 +1,21 @@
-
-
+<div class="header">
+    <h1> HELLO WOLRD!</h1>
+</div>
 
 <div class="logincard">
-    <p-card>
-        
-        <div>
-            <p>Faça o login para acessar o sitema.</p>
-            <p-message *ngIf="!login" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" severity="error" text="Usuário ou Senha inválidos."></p-message>
-        </div>
+    <p-card class="logpcard">
+        <p>Faça o login para acessar o sistema.</p>
+        <p-message *ngIf="!login" [showTransitionOptions]="'1000ms'" [hideTransitionOptions]="'0ms'" severity="error"
+            text="Usuário ou Senha inválidos."></p-message>
+
 
         <span class="p-float-label" id="user">
-            <input [(ngModel)]= "usuario.user" id="usuario" type="text" pInputText>
+            <input [(ngModel)]="usuario.user" id="usuario" type="text" pInputText>
             <label for="usuario">Usuário</label>
         </span>
 
         <span class="p-float-label" id="senhabox">
-            <input [(ngModel)]= "usuario.senha" id="senha" type="password" pInputText>
+            <input [(ngModel)]="usuario.senha" id="senha" type="password" pInputText>
             <label for="senha">Senha</label>
         </span>
 
@@ -23,52 +23,54 @@
         <p-footer>
             Caso não possua usuário, cadastre a baixo.
         </p-footer>
-        <!-- 
-        <button pButton type="button" label="Set" id="botao" (click)="setUser()" [disabled]="usuario.user?.length <= 1 || usuario.senha?.length <= 4"></button>
-        <button pButton type="button" label="Get" id="botao" (click)="getUser()"></button>
-        -->
     </p-card>
 </div>
 
-<div class="logincard">
-<form [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
-    <p-card>
-        <h3>Cadastro de Usuário</h3>
-        <div class="p-grid p-fluid">
+
+<div class="cadcard">
+    <p-accordion>
+        <p-accordionTab header="Click para Cadastrar">
+            <p-card class="cadpcard">
+                <form [formGroup]="formUsuario" (ngSubmit)="onSubmit()">
+        
+                    <h3>Cadastro de Usuário</h3>
+                    <div class="p-grid p-fluid">
+        
+                        <div class="p-col-12 p-md-12">
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                <input type="text" pInputText placeholder="Nome" formControlName="nome">
+                            </div>
+                        </div>
+        
+                        <div class="p-col-12 p-md-12">
+                            <div class="p-inputgroup sobrenome">
+                                <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
+                                <input type="text" pInputText placeholder="Sobrenome" formControlName="sobrenome">
+                            </div>
+                        </div>
+        
+                        <div class="p-col-12 p-md-12">
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon"><i class="pi pi-user-plus"></i></span>
+                                <input type="text" pInputText placeholder="Usuário" formControlName="user">
+        
+                            </div>
+                        </div>
+        
+                        <div class="p-col-12 p-md-12">
+                            <div class="p-inputgroup">
+                                <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
+                                <input type="text" pInputText placeholder="Senha" formControlName="senha">
+                            </div>
+                        </div>
+                    </div>
+                    <button pButton type="submit" (click)="setUser()" label="Salvar usuário" id="botao"></button>
+                    <!--<button pButton type="button" label="Get" id="botao"(click)="getUser()" ></button> -->
+                </form>
+            </p-card>
+        </p-accordionTab>
+    </p-accordion>    
     
-            <div class="p-col-12 p-md-12">
-                <div class="p-inputgroup">
-                    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                    <input type="text" pInputText placeholder="Nome" formControlName="nome">
-                </div>
-            </div>
-        
-            <div class="p-col-12 p-md-12">
-                <div class="p-inputgroup sobrenome">
-                    <span class="p-inputgroup-addon"><i class="pi pi-user"></i></span>
-                    <input type="text" pInputText placeholder="Sobrenome" formControlName="sobrenome">
-                </div>
-            </div>
-        
-            <div class="p-col-12 p-md-8">
-                <div class="p-inputgroup">
-                    <span class="p-inputgroup-addon"><i class="pi pi-user-plus"></i></span>
-                    <input type="text" pInputText placeholder="Usuário" formControlName="user">
-        
-                </div>
-            </div>
-        
-            <div class="p-col-12 p-md-8">
-                <div class="p-inputgroup">
-                    <span class="p-inputgroup-addon"><i class="pi pi-lock"></i></span>
-                    <input type="text" pInputText placeholder="Senha" formControlName="senha">
-                </div>
-            </div>
-        </div>
-        <button pButton type="submit" (click)="setUser()" label="Salvar usuário" id="botao"></button>
-        <!--<button pButton type="button" label="Get" id="botao"(click)="getUser()" ></button> -->
-        </p-card>
-    </form>
-    </div>
-    
-   
+
+</div>
