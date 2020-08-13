@@ -1,0 +1,14 @@
+<header>
+  <h1>INFORMATA</h1>
+</header>
+  
+<nav *ngIf="isLogin === false">
+  
+  
+  <p-menu [model]="items"></p-menu>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+<footer></footer>

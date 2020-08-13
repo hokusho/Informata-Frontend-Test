@@ -1,0 +1,29 @@
+
+
+
+<div class="logincard">
+    <p-card>
+        
+        <div>
+            <p>Faça o login para acessar o sitema.</p>
+            <p-message *ngIf="!login" [showTransitionOptions]="'0ms'" [hideTransitionOptions]="'0ms'" severity="error" text="Usuário ou Senha inválidos."></p-message>
+        </div>
+
+        <span class="p-float-label" id="user">
+            <input [(ngModel)]= "usuario.user" id="usuario" type="text" pInputText>
+            <label for="usuario">Usuário</label>
+        </span>
+
+        <span class="p-float-label" id="senhabox">
+            <input [(ngModel)]= "usuario.senha" id="senha" type="password" pInputText>
+            <label for="senha">Senha</label>
+        </span>
+
+        <button pButton type="button" label="Login" id="botao" (click)="fazerLogin()"></button>
+       <!-- 
+        <button pButton type="button" label="Set" id="botao" (click)="setUser()" [disabled]="usuario.user?.length <= 1 || usuario.senha?.length <= 4"></button>
+        <button pButton type="button" label="Get" id="botao" (click)="getUser()"></button>
+        -->
+    </p-card>
+</div>
+ 
