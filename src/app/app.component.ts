@@ -41,7 +41,6 @@ export class AppComponent implements MenuItem, OnInit, DoCheck {
             {
                 label: 'Usuário',
                 items: [
-                    { label: 'Cadastro', icon: 'pi pi-fw pi-plus', routerLink:'/cadastro' },
                     { label: 'Logout', icon: 'pi pi-sign-out', routerLink:'/login', command: this.setUser},
                 ]
             }];
