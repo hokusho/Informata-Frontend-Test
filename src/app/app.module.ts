@@ -21,7 +21,7 @@ import {CardModule} from 'primeng/card';
 import {MessagesModule} from 'primeng/messages';
 import {MessageModule} from 'primeng/message';
 import {TableModule} from 'primeng/table';
-import { CadastroComponent } from './cadastro/cadastro.component';
+import {AccordionModule} from 'primeng/accordion';
 
 
 @NgModule({
@@ -30,7 +30,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     LoginComponent,
     HomeComponent,
     ConsultaComponent,
-    CadastroComponent
+   
   ],
   imports: [
     BrowserModule,
@@ -45,7 +45,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     MessageModule,
     MessagesModule,
     HttpClientModule,
-    TableModule
+    TableModule,
+    AccordionModule
 
 
 

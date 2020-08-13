@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from './auth.service';
 import { Usuario } from './usuario';
 import { Router } from '@angular/router';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 
@@ -11,8 +12,9 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 
-export class LoginComponent implements OnInit {
-
+export class LoginComponent implements OnInit  {
+  
+  formUsuario: FormGroup
   usuario: Usuario = new Usuario;
 
   login = true;
@@ -20,7 +22,24 @@ export class LoginComponent implements OnInit {
   constructor(private router: Router, private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.creatForm(new Usuario());
+
   }
+
+  creatForm(usuario: Usuario) {
+    this.formUsuario = new FormGroup({
+      nome: new FormControl(usuario.nome),
+      sobrenome: new FormControl(usuario.sobrenome),
+      user: new FormControl(usuario.user),
+      senha: new FormControl(usuario.senha)
+    })
+  }
+  onSubmit() {
+    console.log(this.formUsuario.value);
+    this.formUsuario.reset(new Usuario())
+  }
+
+
   fazerLogin() {
 
     console.log(this.usuario)
@@ -32,13 +51,14 @@ export class LoginComponent implements OnInit {
     }
     console.log(this.login);
   }
-  setUser() {
-    window.localStorage.setItem('userName', this.usuario.user);
-    window.localStorage.setItem('userPass', this.usuario.senha);
-    this.usuario.user = '';
-    this.usuario.senha = '';
 
+  
+  setUser() {
+    window.localStorage.setItem('userName',this.formUsuario.controls.user.value)
+    window.localStorage.setItem('userPass',this.formUsuario.controls.senha.value)
   }
+  
+  
   getUser() {
 
     console.log(window.localStorage.getItem('userName'))
@@ -46,3 +66,4 @@ export class LoginComponent implements OnInit {
 
   }
 }
+

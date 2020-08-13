@@ -3,6 +3,8 @@ h1,h2,h3{
     font-family: "Roboto";
     font-weight: 600;
     color: #4d4d4d;
+    padding-bottom: 30px;
+    text-align: left;
 }
 
 .logincard{
@@ -27,6 +29,10 @@ h1,h2,h3{
 }
 .p-inputtext {
     width: 100%;
+}
+
+.p-accordiontab{
+    width: 800px;
 }
 @media screen and (min-width:320px){
     .logincard{
